@@ -3,7 +3,6 @@ userEnter = int(input("Press 1 to encode \nPress 2 to decode"))
 #userYN = str(input("Do you want to continue?[Y/N]"))
 newString = ""
 
-
 if userEnter == 1:
     while True:
         inputString = str(input("Enter the string to encode"))
