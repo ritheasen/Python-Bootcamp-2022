@@ -1,7 +1,6 @@
 userEnter = int(input("Press 1 to encode \nPress 2 to decode"))
 
 def encodeTodecode():
-
     inputString = str(input("Enter the string to encode"))
     newString = ""
     for i in inputString:
