@@ -20,7 +20,7 @@ if userYN == 'N' and 'n':
                 print(paragraphString.replace(searchString, replaceString, replacementString))
                 break
             elif userYN == 'N' and 'n':
-                continue
+                break
         elif userYNAgain == 'N' and 'n':
             break
 elif userYN == 'Y' and 'y' :
