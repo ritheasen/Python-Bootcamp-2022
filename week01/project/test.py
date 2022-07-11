@@ -1,43 +1,29 @@
-paragraphString = str(input("Enter paragraph1"))
-searchString = str(input("Enter search word"))
-countingWord = paragraphString.count(searchString)
-print(f"There are {countingWord} occurrences")
-userYN = str(input("Do you want to replace the text[Y/N]"))
+import random
 
-if userYN == 'N' and 'n':
-    userYNagain = str(input("Oh! you don’t like to replace, Do you want to check again [Y/N]?"))
+rollNumber = input("Welcome to this dices game!\nEnter the number of dices you want to roll:")
+result = 0
+
+
+
+
+if rollNumber == "":
+    print("USAGE: The number must be between 1 and 8")
+
+    rollNumberAgain = input("Enter the number of dices you want to roll")
     while True:
-        if userYNagain == 'Y' and 'y':
-            paragraphString = str(input("Enter paragraph"))
-            searchString = str(input("Enter search word"))
-            countingWord = paragraphString.count(searchString)
-            print(f"There are {countingWord} occurrences")
-            userYN = str(input("Do you want to replace the text[Y/N]"))
-            if userYN == 'Y' and 'y' :
-                replaceString = str(input("Enter word to replace"))
-                print(f"{countingWord} words has been replaced from the paragraph")
-                print(paragraphString.replace(searchString, replaceString))
-                break
-        elif userYNagain == 'N' and 'n':
+        if (int(rollNumberAgain) >= 1) and (int(rollNumberAgain) <= 8) :
+            for i in range(1, int(rollNumberAgain) + 1):
+                randomNumber = random.randint(1, 6)
+                print(f"Dice {i} : {randomNumber}")
+                result += randomNumber
+            print(f"==========")
+            print(f"RESULT : {result}")
+            print(f"="*10)
+
             break
-elif userYN == 'Y' and 'y' :
-    replaceString = str(input("Enter word to replace"))
-    replacementString = int(input("How many occurrences do you want to replace?"))
-    print(f"{replacementString} words has been replaced from the paragraph")
-    print(paragraphString.replace(searchString, replaceString,replacementString))
-else:
-    print('"Please give a proper input"')
-    userYN = str(input("Do you want to replace the text[Y/N]"))
-    if userYN == 'N':
-        userYNagain = str(input("Oh! you don’t like to replace, Do you want to check again [Y/N]?"))
-        if userYNagain == 'Y':
-            paragraphString = str(input("Enter paragraph"))
-            searchString = str(input("Enter search word"))
-            countingWord = paragraphString.count(searchString)
-            print(f"There are {countingWord} occurrences")
-            userYN = str(input("Do you want to replace the text[Y/N]"))
-            if userYN == 'Y' and 'y' :
-                replaceString = str(input("Enter word to replace"))
-                replacementString = int(input("How many occurrences do you want to replace?"))
-                print(f"{replacementString} words has been replaced from the paragraph")
-                print(paragraphString.replace(searchString, replaceString, replacementString))
+        else:
+            print("USAGE: The number must be between 1 and 8")
+            rollNumberAgain = input("Enter the number of dices you want to roll")
+    else:
+        for i in range(1,int(rollNumber)+1):
+            print(f"Dice {i} : {random.randint(1,6)}")
