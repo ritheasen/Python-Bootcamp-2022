@@ -1,19 +1,26 @@
-print("Enter the Octal Number: ")
-octnum = int(input())
-
-chk = 0
-i = 0
-decnum = 0
-while octnum!=0:
-    rem = octnum%10
-    if rem>7:
-        chk = 1
-        break
-    decnum = decnum + (rem * (8 ** i))
-    i = i+1
-    octnum = int(octnum/10)
-
-if chk == 0:
-    print("\nEquivalent Decimal Value =", decnum)
-else:
-    print("\nInvalid Input!")
+def checkHex(s):
+   
+    # Iterate over string
+    for ch in s:
+ 
+        # Check if the character
+        # is invalid
+        if ((ch < '0' or ch > '9') and
+            (ch < 'A' or ch > 'F')and
+            (ch < 'a' or ch > 'f')):
+                 
+            print("No")
+            return
+         
+    # Print true if all
+    # characters are valid
+    print("Yes")
+ 
+# Driver Code
+     
+# Given string
+s = "ba1"
+  
+# Function call
+checkHex(s)
+ 
