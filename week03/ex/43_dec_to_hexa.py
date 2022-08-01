@@ -1,8 +1,8 @@
 
-def dec_to_hexa(decimal1):
+def dec_to_hexa(decimal):
     
-    print(f"dec_to_hexa({decimal1})")
-    print(hex(decimal1).replace("0x",""))
+    print(f"dec_to_hexa({decimal})")
+    print(hex(decimal).replace("0x",""))
 
 dec_to_hexa(1500)
 
