@@ -1,6 +1,7 @@
 
 
 def oct_to_hex(octal):
+    octal = str(octal)
 
     checkOctal = int(octal) % 10
     decimal = 0
@@ -23,6 +24,6 @@ def oct_to_hex(octal):
     else :
         print(f"oct_to_dec({octal})")
         print("This is not an octal number")
-oct_to_hex("1271")
+oct_to_hex(1271)
 
 

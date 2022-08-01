@@ -15,14 +15,4 @@ def hex_to_oct(hexa):
             break
 
 
-
-
-
-
-
-
-
-
-
-
 hex_to_oct("2b9")

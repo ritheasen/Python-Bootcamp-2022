@@ -2,7 +2,7 @@
 
 
 def oct_to_dec(octal):
-
+    octal = str(octal)
     checkOctal = int(octal) % 10
     decimal = 0
     base = 1
@@ -24,4 +24,5 @@ def oct_to_dec(octal):
     else :
         print(f"oct_to_dec({octal})")
         print("This is not an octal number")
-oct_to_dec("750")
+
+oct_to_dec(750)

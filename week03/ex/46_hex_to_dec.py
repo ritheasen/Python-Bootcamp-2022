@@ -2,6 +2,7 @@
 
 
 def hex_to_dec(hexa):
+    hexa = str(hexa)
     hexDigits = set("0123456789abcdef")
     for char in hexa:
         if (char in hexDigits):
