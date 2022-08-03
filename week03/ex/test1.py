@@ -1,26 +1,15 @@
-def checkHex(s):
-   
-    # Iterate over string
-    for ch in s:
- 
-        # Check if the character
-        # is invalid
-        if ((ch < '0' or ch > '9') and
-            (ch < 'A' or ch > 'F')and
-            (ch < 'a' or ch > 'f')):
-                 
-            print("No")
-            return
-         
-    # Print true if all
-    # characters are valid
-    print("Yes")
- 
-# Driver Code
-     
-# Given string
-s = "ba1"
+
+
+
+
+bit_s = '110010'
+inverse_s = ''
   
-# Function call
-checkHex(s)
- 
+for i in bit_s:
+    
+    if i == '0':
+        inverse_s += '1'
+          
+    else:
+        inverse_s += '0' 
+print("Inversed string is ",inverse_s)

@@ -11,7 +11,7 @@ def hex_to_oct(hexa):
             break
             
         elif not (char in hexDigits):
-            print("This is not a hexa-decimal number")
+            print("This is not a hexa-decimal number") #it print if the input begin with not hexa
             break
 
 

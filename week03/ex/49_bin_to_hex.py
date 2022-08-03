@@ -15,7 +15,5 @@ def bin_to_hex(binary):
             print(f"bin_to_oct({binary})")
             print("This is not binary number")
 
-#print(bin_to_hex("11001101"))
-
 
 bin_to_hex(11001101)

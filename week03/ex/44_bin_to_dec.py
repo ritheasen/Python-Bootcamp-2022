@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 def bin_to_dec(binary):
     binary = str(binary)
     setBinary = set(binary)
@@ -22,5 +16,4 @@ def bin_to_dec(binary):
             print("This is not binary number")
 
 bin_to_dec(110011)
-# print(bin_to_dec(110011))
-#bin_to_dec(110011)
+

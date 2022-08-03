@@ -1,23 +1,38 @@
-def checkHex(s):
-   
-    # Iterate over string
-    for ch in s:
- 
-        # Check if the character
-        # is invalid
-        if ((ch < '0' or ch > '9') and
-            (ch < 'A' or ch > 'F')and
-            (ch < 'a' or ch > 'f')):
+def binary_addition(decimal1,decimal2):
 
-            print("yes")
+    binary1 = bin(int(decimal1)).replace("0b","")
+    binary2 = bin(int(decimal2)).replace("0b","")
+
+    decimal1 = str(decimal1)
+    decimal2 = str(decimal2)
+    answerInList =[]
+    carry = "0"
+
+    for i in range(len(binary1)-1,-1,-1):
+        b1 = binary1[i]
+        b2 = binary2[i]
+        if b1 == "0" and b2 == "0" and carry == "0":
+            answerInList.append("0")
+            carry = "0"
+        elif b1 == "1" and b2 == "1" and carry == "1":
+            answerInList.append("1")
+            carry = "1"
+        elif (b1 == "1" and b2 == "0" and carry == "0") or (b1 == "0" and b2 == "1" and carry == "0") or (b1 == "0" and b2 == "0" and carry =="1"):
+            answerInList.append("1")
+            carry = "0"
         else:
-            print("no")
-                 
-    #         print("No")
-    #         return
-    # print("Yes")
+            answerInList.append( "0")
+            carry = "1"
+    if carry == "1":
+        answerInList.append("1")
 
-s = "baaaaa1"
+    print("Num1 : ",binary1)
+    print("Num2 : ",binary2)
 
-checkHex(s)
- 
+    answerInString = "".join(answerInList[::-1])
+    print(f"Sum(Binary) : {answerInString}")
+
+    sumDecimal = int(decimal1) + int(decimal2)
+    print(f"Sum(Decimal) : {sumDecimal}")
+    
+binary_addition("60","50")
