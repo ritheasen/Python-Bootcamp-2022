@@ -8,18 +8,17 @@ def binary_subtraction(decimal1,decimal2):
     answerInList =[]
     carry = "0"
 
-    answerInList1 =[]
-    carry1 = "0"
-
     inverseBinary1 = ""
+    
     for j in binary1:
         if j == "0":
             inverseBinary1 += "1"
         else:
             inverseBinary1 += "0"
-    #print(inverseBinary1)
 
-    #binary1Plus1 = int(inverseBinary1) + 1
+    answerInList1 =[]
+    carry1 = "0"
+
     plus1 = "000001"
     for i in range(len(inverseBinary1)-1,-1,-1):
         ib1 = inverseBinary1[i]
@@ -39,9 +38,6 @@ def binary_subtraction(decimal1,decimal2):
     if carry1 == "1":
         answerInList1.append("1")   
     answerInString1 = "".join(answerInList1[::-1]) 
-    #print(binary1Plus1)
-    #print(answerInString1)
-
 
     for x in range(len(binary2)-1,-1,-1):
         b2 = binary2[x]
@@ -62,17 +58,13 @@ def binary_subtraction(decimal1,decimal2):
         answerInList.append("1")
     answerInString = "".join(answerInList[::-1])
 
-    print("Num1 : ",binary1)
-    print("Num2 : ",binary2)
-
     inverseBinaryAfterSum = ""
+
     for c in answerInString:
         if c == "0":
             inverseBinaryAfterSum += "1"
         else:
             inverseBinaryAfterSum += "0"
-    #print(inverseBinaryAfterSum)
-
 
     answerInList2 =[]
     carry2 = "0"
@@ -96,14 +88,11 @@ def binary_subtraction(decimal1,decimal2):
     if carry2 == "1":
         answerInList2.append("1")   
     answerInString2 = "".join(answerInList2[::-1]) 
-    #print(binary1Plus1)
-    #print(answerInString2)
 
-    
-
-
-
+    print(f"binary_subtraction({decimal1},{decimal2})")
+    print("Num1 : ",binary1)
+    print("Num2 : ",binary2)
     print(f"Difference(Binary) : {int(answerInString2)}")
     print(f"Difference(Decimal) : {int(answerInString2,2)}")
     
-binary_subtraction("60","50")
+binary_subtraction(60,50)

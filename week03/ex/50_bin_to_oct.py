@@ -8,8 +8,7 @@ def bin_to_oct(binary):
     if setForBinary == setBinary or setBinary == {"0"} or setBinary == {"1"}:
 
         print(f"bin_to_oct({binary})")
-        decimal = int(binary,2) #return integer(binary,base = 2)
-        #return oct(decimal).replace("0o","")  
+        decimal = int(binary,2) #return integer(binary,base = 2) 
         print(oct(decimal).replace("0o","")) 
         
     else:

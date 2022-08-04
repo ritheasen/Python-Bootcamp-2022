@@ -6,6 +6,7 @@ def oct_to_hex(octal):
     checkOctal = int(octal) % 10
     decimal = 0
     base = 1
+    
 
     if checkOctal >= 0 and checkOctal <= 7:
         

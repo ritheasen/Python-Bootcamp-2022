@@ -26,13 +26,13 @@ def binary_addition(decimal1,decimal2):
     if carry == "1":
         answerInList.append("1")
 
+    print(f"binary_addition({decimal1},{decimal2})")
     print("Num1 : ",binary1)
     print("Num2 : ",binary2)
 
     answerInString = "".join(answerInList[::-1])
     print(f"Sum(Binary) : {answerInString}")
-
     
     print(f"Sum(Decimal) : {int(answerInString,2)}")
     
-binary_addition("60","50")
+binary_addition(60,50)

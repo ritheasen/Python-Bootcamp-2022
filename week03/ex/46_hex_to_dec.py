@@ -1,6 +1,5 @@
 
 
-
 def hex_to_dec(hexa):
     hexa = str(hexa)
     hexDigits = set("0123456789abcdef")
@@ -12,7 +11,7 @@ def hex_to_dec(hexa):
             break
             
         else:
-            print("This is not a hexa-decimal number")
+            print("This is not a hexa-decimal number") #it print if the input begin with not hexa
             break
 
-hex_to_dec("ba1")
+hex_to_dec("ba1") 
