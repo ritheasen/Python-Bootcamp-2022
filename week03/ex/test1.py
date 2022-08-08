@@ -1,17 +1,21 @@
+def xor_operation(x, y):
 
+    print(f"xor_operation({x, y})")
 
-list=[]
-def fill(num1, num2):
-    num1 = str(num1)
-    num2 = str(num2)
-    len1 = len(num1)
-    len2 = len(num2)
-    if len1 != len2:
-        if len1 > len2:
-            list.append(num2)
-            while len1 != len2:
-                list.append('0')
-        rejoin = ''.join(list[::-1])
-    print(rejoin)
+    hexnum1 = x
 
-fill('1000001', '1')
+    hexnum2 = y
+
+    decnum1 = int(hexnum1, 16)
+
+    decnum2 = int(hexnum2, 16)
+
+    binnum1 = bin(decnum1).replace("0b", "")
+
+    binnum2 = bin(decnum2).replace("0b", "")
+
+    binxor = bin(decnum1 ^ decnum2)
+
+    print(f"{binnum1} \n{binnum2} \n\n{binxor.replace('0b','')}")
+
+xor_operation("33", "3D")

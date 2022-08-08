@@ -1,38 +1,9 @@
-def binary_addition(decimal1,decimal2):
+def xor_operation(hex1,hex2):
 
-    binary1 = bin(int(decimal1)).replace("0b","")
-    binary2 = bin(int(decimal2)).replace("0b","")
+    binary1 = bin(int(hex1,16)).replace("0b","")
+    binary2 = bin(int(hex2,16)).replace("0b","")
+    xorBinary = bin(int(binary1,2) ^ int(binary2,2))
 
-    decimal1 = str(decimal1)
-    decimal2 = str(decimal2)
-    answerInList =[]
-    carry = "0"
+    print(f'xor_operation("{hex1}","{hex2}")\n\n{binary1}\n{binary2}\n\n{xorBinary.replace("0b","")}')
 
-    for i in range(len(binary1)-1,-1,-1):
-        b1 = binary1[i]
-        b2 = binary2[i]
-        if b1 == "0" and b2 == "0" and carry == "0":
-            answerInList.append("0")
-            carry = "0"
-        elif b1 == "1" and b2 == "1" and carry == "1":
-            answerInList.append("1")
-            carry = "1"
-        elif (b1 == "1" and b2 == "0" and carry == "0") or (b1 == "0" and b2 == "1" and carry == "0") or (b1 == "0" and b2 == "0" and carry =="1"):
-            answerInList.append("1")
-            carry = "0"
-        else:
-            answerInList.append( "0")
-            carry = "1"
-    if carry == "1":
-        answerInList.append("1")
-
-    print("Num1 : ",binary1)
-    print("Num2 : ",binary2)
-
-    answerInString = "".join(answerInList[::-1])
-    print(f"Sum(Binary) : {answerInString}")
-
-    sumDecimal = int(decimal1) + int(decimal2)
-    print(f"Sum(Decimal) : {sumDecimal}")
-    
-binary_addition("60","50")
+xor_operation("33","3D")
