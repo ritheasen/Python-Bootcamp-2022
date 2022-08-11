@@ -3,33 +3,33 @@
 import os.path
 
 
-def delete_file(filename):
+def write_file(filename, content):
 
 
 
     if os.path.exists(filename):
 
         while True:
-            
-            replaceAsk = input(f"Are you sure tou want to delete {filename}?[Y/N]")
+            replaceAsk = input(f"Are you sure tou want to replace {filename}?[Y/N]")
 
             if replaceAsk == "Y":
-
-                os.remove(filename)
+                f = open(filename, "w")
+                f.write(content)
                 print("1")
                 break
 
             elif replaceAsk == "N":
-
                 print("0")
                 break
 
             else:
-
                 print("Invalid Option")
                 continue
 
     else:
-        print("The file name does not exist")
+        f = open(filename, "w")
+        f.write(content)
+        print("1")
 
-delete_file("Hello1.txt")
+
+write_file("jsonToTSV.tsv","Hello world 123456")

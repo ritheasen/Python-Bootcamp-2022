@@ -1,14 +1,14 @@
-import os
+import os.path
+from pathlib import Path
 
-# folder path
-dir_path = r'E:\\account\\'
+def read_file(string):
+    f = open(string, "r")
+    fileExist = Path(string)
 
-# list to store files
-res = []
+    if fileExist.is_file():
+        print("asd")
+    else:
+        print("qwe")
 
-# Iterate directory
-for path in os.listdir(dir_path):
-    # check if current path is a file
-    if os.path.isfile(os.path.join(dir_path, path)):
-        res.append(path)
-print(res)
+
+read_file("Hello1.txt")
