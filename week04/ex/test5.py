@@ -1,35 +1,30 @@
 
-
-import os.path
-
-
-def write_file(filename, content):
+import json
+import csv
 
 
+jsonFile = open("JSON.json","r")
+jsonData = json.loads(jsonFile)
+jsonFile.close()
 
-    if os.path.exists(filename):
+data = json.loads(jsonData)
 
-        while True:
-            replaceAsk = input(f"Are you sure tou want to replace {filename}?[Y/N]")
+tsvFile = open("TSV.tsv","w")
+tsvWriter = csv.writer(tsvFile, delimiter = "\t")
 
-            if replaceAsk == "Y":
-                f = open(filename, "w")
-                f.write(content)
-                print("1")
-                break
+tsvWriter.writerow(data[0].keys())
 
-            elif replaceAsk == "N":
-                print("0")
-                break
+# for row in data:
+#     tsvWriter.writerow(row.values())
 
-            else:
-                print("Invalid Option")
-                continue
+dw = csv.DictWriter(tsvFile, sorted(j[0].keys()), delimiter='\t')
+dw.writeheader()
+dw.writerows()
 
-    else:
-        f = open(filename, "w")
-        f.write(content)
-        print("1")
+tsvFile.close()
+
+# dw = csv.DictWriter(t, sorted(j[0].keys()), delimiter='\t')
+# dw.writeheader()
+# dw.writerows(j)
 
 
-write_file("jsonToTSV.tsv","Hello world 123456")

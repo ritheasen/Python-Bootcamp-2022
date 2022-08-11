@@ -5,8 +5,6 @@ import os.path
 
 def write_file(filename, content):
 
-
-
     if os.path.exists(filename):
 
         while True:
@@ -32,4 +30,4 @@ def write_file(filename, content):
         print("1")
 
 
-write_file("Hello1.txt","Hello world 123456")
+write_file("Hello12.txt","Hello world")

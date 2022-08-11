@@ -1,14 +1,19 @@
-import os.path
-from pathlib import Path
+import json
+import csv
 
-def read_file(string):
-    f = open(string, "r")
-    fileExist = Path(string)
+# input data
+json_file = open("data.json", "r")
+json_data = json.load(json_file)
+json_file.close()
 
-    if fileExist.is_file():
-        print("asd")
-    else:
-        print("qwe")
+data = json.loads(json_data)
 
+tsv_file = open("data.tsv", "w")
+tsv_writer = csv.writer(tsv_file, delimiter='\t')
 
-read_file("Hello1.txt")
+tsv_writer.writerow(data[0].keys()) # write the header
+
+for row in data: # write data rows
+    tsv_writer.writerow(row.values())
+
+tsv_file.close()
