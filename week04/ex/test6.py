@@ -1,13 +1,6 @@
 import requests
 
+BASE_URL = 'https://fakestoreapi.com'
 
-def get_request():
-
-    endpoint = "http://maps.googleapis.com/maps/api/geocode/json"
-    location = "Phnom Penh"
-    param = {'address': location}
-    req = requests.get(url=endpoint, params=param)
-    print(req.text)
-
-
-get_request()
+response = requests.get(f"{BASE_URL}/products")
+print(response.json())

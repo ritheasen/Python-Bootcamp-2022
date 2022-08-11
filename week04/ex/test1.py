@@ -1,19 +1,11 @@
-import json
-import csv
+import requests
 
-# input data
-json_file = open("data.json", "r")
-json_data = json.load(json_file)
-json_file.close()
+BASE_URL = 'https://fakestoreapi.com'
 
-data = json.loads(json_data)
+updated_product = {
+    "title": 'updated_product',
+    "category": 'clothing'
+}
 
-tsv_file = open("data.tsv", "w")
-tsv_writer = csv.writer(tsv_file, delimiter='\t')
-
-tsv_writer.writerow(data[0].keys()) # write the header
-
-for row in data: # write data rows
-    tsv_writer.writerow(row.values())
-
-tsv_file.close()
+response = requests.put(f"{BASE_URL}/products/21", json=updated_product)
+print(response.json())

@@ -1,20 +1,14 @@
-import json
-import csv
+import requests
 
-j = json.loads(r'''[
-  {
-    "x": "1",
-    "y": "2",
-    "z": "3"
-  },
-  {
-    "x": "6",
-    "y": "7",
-    "z": "B"
-  }
-]''')
+BASE_URL = 'https://fakestoreapi.com'
 
-with open('output.tsv', 'w') as output_file:
-    dw = csv.DictWriter(output_file, sorted(j[0].keys()), delimiter='\t')
-    dw.writeheader()
-    dw.writerows(j)
+new_product = {
+    "title": 'test product',
+    "price": 13.5,
+    "description": 'lorem ipsum set',
+    "image": 'https://i.pravatar.cc',
+    "category": 'electronic'
+}
+
+response = requests.post(f"{BASE_URL}/products", json=new_product)
+print(response.json())

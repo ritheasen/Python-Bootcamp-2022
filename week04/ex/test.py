@@ -1,3 +1,7 @@
-import io
+import requests
 
-dm_tsv = io.readtxt("a.tsv", delimiter = "\t")
+BASE_URL = 'https://fakestoreapi.com'
+
+
+response = requests.delete(f"{BASE_URL}/products/21")
+print(response.json())

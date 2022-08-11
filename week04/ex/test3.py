@@ -1,10 +1,19 @@
+import requests
 import json
-import csv
 
-jf = open("JSON.json","r")
-j = json.loads(jf)
+BASE_URL = 'https://fakestoreapi.com'
 
-with open('output.tsv', 'w') as output_file:
-    dw = csv.DictWriter(output_file, sorted(j[0].keys()), delimiter='\t')
-    dw.writeheader()
-    dw.writerows(j)
+new_product = {
+    "title": 'test product',
+    "price": 13.5,
+    "description": 'lorem ipsum set',
+    "image": 'https://i.pravatar.cc',
+    "category": 'electronic'
+}
+
+headers = {
+    "Content-Type": "application/json"
+}
+
+response = requests.post(f"{BASE_URL}/products", data=json.dumps(new_product), headers=headers)
+print(response.json())

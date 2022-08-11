@@ -1,30 +1,10 @@
+import requests
 
-import json
-import csv
+BASE_URL = 'https://fakestoreapi.com'
 
+query_params = {
+    "limit": 3
+}
 
-jsonFile = open("JSON.json","r")
-jsonData = json.loads(jsonFile)
-jsonFile.close()
-
-data = json.loads(jsonData)
-
-tsvFile = open("TSV.tsv","w")
-tsvWriter = csv.writer(tsvFile, delimiter = "\t")
-
-tsvWriter.writerow(data[0].keys())
-
-# for row in data:
-#     tsvWriter.writerow(row.values())
-
-dw = csv.DictWriter(tsvFile, sorted(j[0].keys()), delimiter='\t')
-dw.writeheader()
-dw.writerows()
-
-tsvFile.close()
-
-# dw = csv.DictWriter(t, sorted(j[0].keys()), delimiter='\t')
-# dw.writeheader()
-# dw.writerows(j)
-
-
+response = requests.get(f"{BASE_URL}/products", params=query_params)
+print(response.json())

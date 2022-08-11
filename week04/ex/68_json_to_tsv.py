@@ -18,4 +18,4 @@ def json_to_tsv(jsonfile,tsvfile):
         print("0")
 
 
-json_to_tsv("bigsample.json","bigsample.tsv")
+json_to_tsv("shopping.json","shopping.tsv")
