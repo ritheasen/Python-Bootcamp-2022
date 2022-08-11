@@ -4,8 +4,8 @@ def current_folder():
     
 
     listFileFolder = []
-    #currentDirectory = os.listdir("C://Users//KIT//Desktop//New folder") #empty
-    currentDirectory = os.listdir() #not empty
+    
+    currentDirectory = os.listdir() 
 
     for i in range (len(currentDirectory)):
         
