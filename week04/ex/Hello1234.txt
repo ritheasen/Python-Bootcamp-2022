@@ -1,0 +1,8 @@
+
+
+[12/08/2022 17:28:25]Hello world
+[12/08/2022 17:28:25]Welcome to KIT
+[12/08/2022 17:28:25]Time to take rest
+[12/08/2022 17:32:03]& C:/ProgramData/Anaconda33/python.exe "c:/Users/KIT/Desktop/Python bootcamp/week04/ex/test.py"
+[12/08/2022 17:32:03]& C:/ProgramData/Anaconda33/python.exe "c:/Users/KIT/Desktop/Python bootcamp/week04/ex/test.py"
+[12/08/2022 17:32:03]& C:/ProgramData/Anaconda33/python.exe "c:/Users/KIT/Desktop/Python bootcamp/week04/ex/test.py"

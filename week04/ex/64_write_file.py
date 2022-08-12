@@ -8,7 +8,7 @@ def write_file(filename, content):
     if os.path.exists(filename):
 
         while True:
-            replaceAsk = input(f"Are you sure tou want to replace {filename}?[Y/N]")
+            replaceAsk = input(f"Are you sure you want to replace {filename}?[Y/N]")
 
             if replaceAsk == "Y":
                 f = open(filename, "w")

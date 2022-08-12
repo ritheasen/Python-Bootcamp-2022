@@ -9,7 +9,6 @@ def json_to_tsv(jsonfile,tsvfile):
         f = open(jsonfile) 
         data = json.load(f)
         toTSVfile = open(tsvfile, "w")
-
         showTSV = csv.DictWriter(toTSVfile, sorted(data[0].keys()), delimiter='\t')
         showTSV.writeheader()
         showTSV.writerows(data)

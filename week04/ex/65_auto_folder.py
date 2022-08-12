@@ -3,39 +3,42 @@ import shutil
 
 def auto_folder(foldername):
 
-    if os.path.exists(foldername):
+    pathCurrentDir = os.getcwd()
 
-        while True:
-            replaceAsk = input(f"Are you sure tou want to replace {foldername}?[Y/N]")
+    for i in range (len(folderName)) :
 
-            if replaceAsk == "Y":
+        if os.path.exists(folderName[i]):
+            
+            while True:
 
-                shutil.rmtree(foldername)
-                parent_dir = os.getcwd()
-                path = os.path.join(parent_dir, foldername)
-                os.mkdir(path)
-                print("1")
-                break
+                replaceAsk = input(f"Are you sure tou want to replace {foldername}?[Y/N]")
 
-            elif replaceAsk == "N":
+                if replaceAsk == "Y":
 
-                print("0")
-                break
+                    shutil.rmtree(folderName[i])
+                    path = os.path.join(pathCurrentDir, folderName[i])
+                    os.mkdir(path)
+                    print("1")
+                    break
 
-            else:
+                elif replaceAsk == "N":
 
-                print("Invalid Option")
-                continue
+                    print("0")
+                    break
 
-    elif foldername == "":
+                else:
 
-        print("0")
+                    print("Invalid Option")
+                    continue
 
-    else:
-        
-        parent_dir = os.getcwd()
-        path = os.path.join(parent_dir, foldername)
-        os.mkdir(path)
-        print("1")
+        elif foldername == "":
 
-auto_folder("a")
+            print("0")
+
+        else:
+            path = os.path.join(pathCurrentDir, folderName[i])
+            os.mkdir(path)
+            print("1")
+    
+folderName = ["aa","bb"]
+auto_folder(folderName)
