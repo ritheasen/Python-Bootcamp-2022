@@ -1,11 +1,13 @@
-import requests
+import json
+import csv
 
-BASE_URL = 'https://fakestoreapi.com'
 
-updated_product = {
-    "title": 'updated_product',
-    "category": 'clothing'
-}
+def json_to_tsv(jname, tsv):
+    f = open(jname)
+    data = json.load(f)
+    with open(tsv, 'w') as output_file:
+        dw = csv.DictWriter(output_file, sorted(data[0].keys()), delimiter='\t')
+        dw.writeheader()
+        dw.writerows(data)
 
-response = requests.put(f"{BASE_URL}/products/21", json=updated_product)
-print(response.json())
+json_to_tsv("JSON.json", "asd.tsv")

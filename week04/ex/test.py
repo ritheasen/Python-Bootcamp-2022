@@ -1,7 +1,18 @@
-import requests
+import json
+import csv
 
-BASE_URL = 'https://fakestoreapi.com'
+def tsv_to_json(tsvfile,jsonfile):
 
+    data = {}
 
-response = requests.delete(f"{BASE_URL}/products/21")
-print(response.json())
+    tsvfile = open(tsvfile)
+    tsvReader = csv.DictReader(tsvfile, delimiter="\t")
+    for row in tsvReader:
+        first = row['content']
+        data[first] = row
+            
+    #print(d)
+    jsonfile = open("JSONtest.json", 'w') 
+    jsonfile.write(json.dumps(data, indent=3))
+    
+tsv_to_json("JSON.tsv","JSONtest23.json")

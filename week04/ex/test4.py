@@ -1,14 +1,46 @@
-import requests
+import json
 
-BASE_URL = 'https://fakestoreapi.com'
+arr = []
+file = open("JSON.tsv", 'r')
+a = file.readline()
 
-new_product = {
-    "title": 'test product',
-    "price": 13.5,
-    "description": 'lorem ipsum set',
-    "image": 'https://i.pravatar.cc',
-    "category": 'electronic'
-}
+titles = [t.strip() for t in a.split('\t')]
 
-response = requests.post(f"{BASE_URL}/products", json=new_product)
-print(response.json())
+# for line in file:
+#     d = {}
+#     #print(d)
+#     for t, f in zip(titles, line.split('\t')):
+#         d[t] = f.strip
+#         print(d[t])
+#     arr.append(d)
+
+
+for line in file:
+    d = {}
+    #print(line)
+    #print(d)
+    for t, f in zip(titles, line.split('\t')):
+        d[t] = f.strip()
+        #print(titles)
+        #print(f.strip)
+        #print(t)
+        #print(f)
+        #print(d[t])
+        #print(d)
+    arr.append(d)
+    #print(d)
+
+
+
+
+    #print(d)
+    #print(a.strip())
+
+
+jsonfile = open("JSONtest.json","w")
+jsonfile.write(json.dumps(arr,indent=3))
+
+
+
+# for i in range (len(aInString)):
+#     print([i])

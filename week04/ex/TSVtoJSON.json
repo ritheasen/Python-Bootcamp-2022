@@ -1,0 +1,37 @@
+{
+   "1": {
+      "emailAddress": "krish.lee@learningcontainer.com",
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "phoneNumber": "123456",
+      "userId": "1"
+   },
+   "2": {
+      "emailAddress": "racks.jacson@learningcontainer.com",
+      "firstName": "racks",
+      "lastName": "jacson",
+      "phoneNumber": "123456",
+      "userId": "2"
+   },
+   "3": {
+      "emailAddress": "denial.roast@learningcontainer.com",
+      "firstName": "denial",
+      "lastName": "roast",
+      "phoneNumber": "33333333",
+      "userId": "3"
+   },
+   "4": {
+      "emailAddress": "devid.neo@learningcontainer.com",
+      "firstName": "devid",
+      "lastName": "neo",
+      "phoneNumber": "222222222",
+      "userId": "4"
+   },
+   "5": {
+      "emailAddress": "jone.mac@learningcontainer.com",
+      "firstName": "jone",
+      "lastName": "mac",
+      "phoneNumber": "111111111",
+      "userId": "5"
+   }
+}

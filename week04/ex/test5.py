@@ -1,10 +1,28 @@
-import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+import json
+import csv
+import os.path
 
-query_params = {
-    "limit": 3
-}
+def json_to_tsv(tsvfile,jsonfile):
 
-response = requests.get(f"{BASE_URL}/products", params=query_params)
-print(response.json())
+    if os.path.exists(jsonfile):
+        arr = []
+        f = open(tsvfile, "r")
+        tsvfileRead = f.readlines
+        print(tsvfileRead)
+
+
+
+        # f = open(jsonfile) 
+        # data = json.load(f)
+        # toTSVfile = open(tsvfile, "w")
+
+        # showTSV = csv.DictWriter(toTSVfile, sorted(data[0].keys()), delimiter='\t')
+        # showTSV.writeheader()
+        # showTSV.writerows(data)
+        print("1")
+    else:
+        print("0")
+
+
+json_to_tsv("JSON.json","tsvJSON.tsv")
