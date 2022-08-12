@@ -1,10 +1,10 @@
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-query_params = {
+queryToCheck = {
     "limit": 3
 }
 
-response = requests.get(f"{BASE_URL}/products", params=query_params)
+response = requests.get(f"{fakeURL}/products", params = queryToCheck)
 print(response.json())

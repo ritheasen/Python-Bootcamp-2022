@@ -2,7 +2,7 @@
 
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-response = requests.get(f"{BASE_URL}/products/18")
+response = requests.get(f"{fakeURL}/products/18")
 print(response)

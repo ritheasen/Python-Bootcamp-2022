@@ -1,11 +1,11 @@
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-updated_product = {
+updatedProduct = {
     "title": 'updated_product',
     "category": 'clothing'
 }
 
-response = requests.put(f"{BASE_URL}/products/21", json=updated_product)
+response = requests.put(f"{fakeURL}/products/21", json = updatedProduct)
 print(response.json())

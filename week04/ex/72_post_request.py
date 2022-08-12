@@ -1,8 +1,8 @@
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-new_product = {
+newProduct = {
     "title": 'test product',
     "price": 13.5,
     "description": 'lorem ipsum set',
@@ -10,5 +10,5 @@ new_product = {
     "category": 'electronic'
 }
 
-response = requests.post(f"{BASE_URL}/products", json=new_product)
+response = requests.post(f"{fakeURL}/products", json = newProduct)
 print(response.json())

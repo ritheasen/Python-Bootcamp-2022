@@ -1,8 +1,8 @@
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-response = requests.get(f"{BASE_URL}/products") 
-# response = requests.get(f"{BASE_URL}/carts")
-# response = requests.get(f"{BASE_URL}/users")#carts #users #
+response = requests.get(f"{fakeURL}/products") 
+# response = requests.get(f"{fakeURL}/carts")
+# response = requests.get(f"{fakeURL}/users")#carts #users #
 print(response.json())

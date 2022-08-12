@@ -1,10 +1,10 @@
 import requests
 
-BASE_URL = 'https://fakestoreapi.com'
+fakeURL = 'https://fakestoreapi.com'
 
-updated_product = {
+updatedProduct = {
     "category": 'electronic'
 }
 
-response = requests.patch(f"{BASE_URL}/products/21", json=updated_product)
+response = requests.patch(f"{fakeURL}/products/21", json = updatedProduct)
 print(response.json())
